@@ -1,60 +1,63 @@
-<!DOCTYPE html> 
-<html> 
+<!DOCTYPE html>
+<html>
 <!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
  
 THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Tim Riedel
-Author 2
+Grayson Haman
+
  
 Further Information:
 http://cns.utexas.edu/fri
  
 Research Educator:
-Timothy Riedel
-triedel@utexas.edu
+hamangr@student.saviochs.org
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+To give options of symptoms of both a cold and allergies so that people can select their symptoms and figure out whether they have a cold or allergies
  
 Known Issues:
-blah, blah, blah, blah
+This is not made by a doctor or a studen doctor and only from doctor certified sources. Do not fully trust results and always confim diagnosis with your docotr.
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
-	
-   <head> 
-      <title>Hello World</title>  
+
+   <head>
+      <title>Cold or Allergies?</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
-   </head> 
+   </head>
 
 
 <script>
         var allergy_count = 0;
         var cold_count = 0;
-
+var allergy_count=0;
+var cold_count=0;
 
         function allergyAdd(){
             allergy_count = allergy_count + 1;
-		alert(allergy_count);
-
+alert("allergy_count is " + allergy_count + "\ncold_count is " + cold_count)
         }
 
         function coldAdd(){
             cold_count = cold_count + 1;
+        alert("allergy_count is " + allergy_count + "\ncold_count is " + cold_count)
         }
 
+function changeText(){var initialText = document.getElementById("results");
+initialText.innerHTML = "Probability it is allergies = " + allergy_count + "% <br> Probability it is a cold = " + cold_count + "%"
+}
   </script>
 
 
 
-<style>	
+<style>
 .body {
      margin: 0em;
 }
@@ -74,45 +77,132 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     left: 0vw;
     z-index: 1;
 }
+
+.w3-flat-carrot h1 {
+    color: black;
+}
+
+.page p {
+    color: black;
+}
 </style>
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+<h1>Cold or Allergies?</h1>
 </div>
-	
+
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
-	
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
-	
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
- 	
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+
+<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+
+<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 
+<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
 <div class="page" id="one">
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
-	</div>
-	
-    	<div id="content" class="w3-container">
-        <p>Do you have a fever?</p>    
-    	</div>
+<div id="header" class="w3-container w3-flat-carrot">
+<h1>Question 1</h1>
+</div>
+<!--Herh-->
+    <div id="content" class="w3-container">
+        <p>Are you spitting colored mucus?</p>    
+    <a href="#two"onclick= "coldAdd()" class="w3-btn w3-grey w3-round"> Yes </a>
+        <a href="#two"onclick= "allergyAdd()" class="w3-btn w3-grey w3-round"> No </a>
 </div>
 
 <div class="page" id="two">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Content of page 2 goes here.</p>
-	</div>
-</div>	
+<div class="w3-container w3-flat-carrot">
+<h1>Question 2</h1>
+</div>
+
+<div id="content" class="w3-container">
+<p>Do you have a fever?</p>
+<a href="#three"onclick="coldAdd()" class="w3-btn w3-grey w3-round"> Yes </a>
+    <a href="#three" onclick="allergyAdd()" class="w3-btn w3-grey w3-round"> No </a>
+   
+</div>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+<p>Cold or Allergies?</p>
 </footer>
 
 </body>
 </html>
+
+<div class="page" id="three">
+<div class="w3-container w3-flat-carrot">
+<h1>Question 3</h1>
+</div>
+
+<div id="content" class="w3-container">
+<p>Do you feel itchy in the eyes, mouth, face, or throat?</p>
+<a href="#four"onclick="allergyAdd()" class="w3-btn w3-grey w3-round"> Yes </a>
+    <a href="#four" onclick="coldAdd()" class="w3-btn w3-grey w3-round"> No </a>
+</div>
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+<p>Cold or Allergies?</p>
+
+
+    <div class="page" id="four">
+<div class="w3-container w3-flat-carrot">
+<h1>Question 4</h1>
+</div>
+
+<div id="content" class="w3-container">
+<p>Does your body ache?</p>
+<a href="#five"onclick="coldAdd()" class="w3-btn w3-grey w3-round"> Yes </a>
+    <a href="#five" onclick="allergyAdd()" class="w3-btn w3-grey w3-round"> No </a>
+</div>
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+<p>Cold or Allergies?</p>
+
+
+
+     <div class="page" id="five">
+<div class="w3-container w3-flat-carrot">
+<h1>Question 5</h1>
+</div>
+
+<div id="content" class="w3-container">
+<p>_How long have you had these symptoms?</p>
+<a href="#six"onclick="coldAdd()" class="w3-btn w3-grey w3-round"> Less than two weeks </a>
+    <a href="#six" onclick="allergyAdd()" class="w3-btn w3-grey w3-round"> More than two weeks </a>
+</div>
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+<p>Cold or Allergies?</p>
+
+
+      <div class="page" id="six">
+<div class="w3-container w3-flat-carrot">
+<h1>Question 6</h1>
+</div>
+
+<div id="content" class="w3-container">
+<p>_Does your location change your symptoms?</p>
+<a href="#seven"onclick="allergyAdd()" class="w3-btn w3-grey w3-round"> Yes </a>
+
+    <a href="#seven" onclick="coldAdd()" class="w3-btn w3-grey w3-round"> No </a>
+</div>
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+<p>Cold or Allergies?</p>
+
+
+
+     <div class="page" id="seven">
+<div class="w3-container w3-flat-carrot">
+<h1>Results</h1>
+</div>
+
+<div id="content" class="w3-container">
+<p id="results">Based on your answers, you most likely have...</p>
+    <a onclick="changeText()"class="w3-btn w3-grey w3-round"> See Results </a>
+</div>
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+<p>Cold or Allergies?</p>
